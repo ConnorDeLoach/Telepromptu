@@ -1,37 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout android:id="@+id/drawerLayoutMain"
-                                        xmlns:android="http://schemas.android.com/apk/res/android"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
+<android.support.v7.widget.ContentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/main_activity_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp" />
 
-        <TextView
-            android:id="@+id/viewEmpty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No Results"
-            android:textSize="26dp"/>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/main_activity_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="buttonOnClickListener"
+        android:text="All Ready!"
+        android:visibility="gone" />
 
-        <ListView
-            android:id="@+id/listViewFiles"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ListView>
-    </RelativeLayout>
-
-    <ListView
-        android:id="@+id/listViewQueries"
-        android:layout_width="280dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="#333333"
-        android:choiceMode="singleChoice"
-        android:divider="#383838"
-        android:dividerHeight="1dp">
-    </ListView>
-
-</android.support.v4.widget.DrawerLayout>
+</android.support.v7.widget.ContentFrameLayout>

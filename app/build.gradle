@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 25
@@ -30,8 +31,8 @@ dependencies {
     compile 'pub.devrel:easypermissions:0.2.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.google.android.gms:play-services-drive:10.2.1'
-    compile 'com.google.android.gms:play-services-auth:10.2.1'
+    compile 'com.google.android.gms:play-services-drive:9.0.0'
+    compile 'com.google.android.gms:play-services-auth:9.0.0'
     compile('com.google.apis:google-api-services-drive:v3-rev71-1.22.0') {
         exclude group: 'org.apache.httpcomponents'
     }

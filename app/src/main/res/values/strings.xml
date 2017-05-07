@@ -3,4 +3,16 @@
 
     <!-- Logging messages -->
     <string name="drive_api_resolution_failure">Telempromptu requires you to sign into your Google Drive account.</string>
+
+    <!-- UI Strings -->
+    <!-- MainActivity -->
+    <string name="signed_in_fmt">Signed in as: %s</string>
+
+    <!-- DriveActivity -->
+    <string name="disconnect">Disconnect</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="signed_out">Signed out</string>
+    <string name="title_text">Welcome to Telepromptu!</string>
+    <string name="desc_google_icon">Google Logo</string>
+    <string name="loading">Loading…</string>
 </resources>

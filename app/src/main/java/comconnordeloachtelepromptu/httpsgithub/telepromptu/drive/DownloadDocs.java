@@ -39,7 +39,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import comconnordeloachtelepromptu.httpsgithub.telepromptu.MainActivity;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -329,7 +328,7 @@ public class DownloadDocs extends Activity
             JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
             mService = new com.google.api.services.drive.Drive.Builder(
                     transport, jsonFactory, credential)
-                    .setApplicationName("Drive API Android Quickstart")
+                    .setApplicationName("Telepromptu")
                     .build();
         }
 
@@ -357,10 +356,10 @@ public class DownloadDocs extends Activity
          * @throws IOException
          */
         private List<String> getDataFromApi() throws IOException {
-            // Get a list of up to 10 files.
+            // Get all documents on drive
             List<String> fileInfo = new ArrayList<String>();
             FileList result = mService.files().list()
-                    .set("mime", "application/vnd.google-apps.document")
+                    .setQ("mimeType = 'application/vnd.google-apps.document'")
                     .setFields("files(id)")
                     .execute();
             List<File> files = result.getFiles();
@@ -386,7 +385,7 @@ public class DownloadDocs extends Activity
             if (output == null || output.size() == 0) {
                 mOutputText.setText("No results returned.");
             } else {
-                Intent intent = new Intent(MainActivity.ACTION_DRIVEID_RECEIVED);
+                Intent intent = new Intent();
                 intent.putStringArrayListExtra("driveid", (ArrayList<String>) output);
                 sendBroadcast(intent);
             }
